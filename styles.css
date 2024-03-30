@@ -1,0 +1,58 @@
+/* Estilos para telas menores */
+@media only screen and (max-width: 600px) {
+    .partida {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Estilos para telas maiores */
+@media only screen and (min-width: 768px) {
+    .partidas-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .partida {
+        width: calc(33.333% - 20px);
+        margin: 10px;
+    }
+}
+
+/* Estilos gerais */
+.partidas-container {
+    padding: 20px;
+}
+
+.partida {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.partida:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.partida img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.partida button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.partida button:hover {
+    background-color: #0056b3;
+}
