@@ -12,7 +12,7 @@ body {
 }
 
 .partida {
-    width: calc(50% - 20px);
+    width: calc(33.33% - 20px);
     margin-bottom: 20px;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -50,6 +50,12 @@ body {
 }
 
 @media (max-width: 768px) {
+    .partida {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
     .partida {
         width: calc(100% - 20px);
     }
