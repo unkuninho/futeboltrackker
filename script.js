@@ -26,16 +26,16 @@ window.addEventListener("load", function() {
 
     // Array de informações das partidas
     var partidas = [
-        { data: new Date("2024-05-14"), time1: "Internacional", time2: "Bahia", campeonato: "Campeonato Brasileiro", poster: "poster1.jpg", imagem_twitter: "partida1.jpg" },
-        { data: new Date("2024-05-14"), time1: "Cruzeiro", time2: "Botafogo", campeonato: "Campeonato Brasileiro", poster: "poster2.jpg", imagem_twitter: "partida2.jpg" },
-        { data: new Date("2024-05-14"), time1: "Vitória", time2: "Palmeiras", campeonato: "Campeonato Brasileiro", poster: "poster3.jpg", imagem_twitter: "partida3.jpg" },
-        { data: new Date("2024-05-14"), time1: "Fluminense", time2: "Bragantino", campeonato: "Campeonato Brasileiro", poster: "poster4.jpg", imagem_twitter: "partida4.jpg" },
-        { data: new Date("2024-05-14"), time1: "Vasco da Gama", time2: "Grêmio", campeonato: "Campeonato Brasileiro", poster: "poster5.jpg", imagem_twitter: "partida5.jpg" },
-        { data: new Date("2024-05-14"), time1: "Corinthians", time2: "Atlético-MG", campeonato: "Campeonato Brasileiro", poster: "poster6.jpg", imagem_twitter: "partida6.jpg" },
-        { data: new Date("2024-05-14"), time1: "São Paulo", time2: "Fortaleza", campeonato: "Campeonato Brasileiro", poster: "poster7.jpg", imagem_twitter: "partida7.jpg" },
-        { data: new Date("2024-05-14"), time1: "Athletico-PR", time2: "Cuiabá", campeonato: "Campeonato Brasileiro", poster: "poster8.jpg", imagem_twitter: "partida8.jpg" },
-        { data: new Date("2024-05-14"), time1: "Atlético-GO", time2: "Flamengo", campeonato: "Campeonato Brasileiro", poster: "poster9.jpg", imagem_twitter: "partida9.jpg" },
-        { data: new Date("2024-05-14"), time1: "Criciúma", time2: "Juventude", campeonato: "Campeonato Brasileiro", poster: "poster10.jpg", imagem_twitter: "partida10.jpg" }
+        { data: new Date("2024-05-14"), time1: "Internacional", time2: "Bahia", campeonato: "Campeonato Brasileiro", poster: "poster1.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-14"), time1: "Cruzeiro", time2: "Botafogo", campeonato: "Campeonato Brasileiro", poster: "poster2.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-14"), time1: "Vitória", time2: "Palmeiras", campeonato: "Campeonato Brasileiro", poster: "poster3.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-14"), time1: "Fluminense", time2: "Bragantino", campeonato: "Campeonato Brasileiro", poster: "poster4.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-14"), time1: "Vasco da Gama", time2: "Grêmio", campeonato: "Campeonato Brasileiro", poster: "poster5.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-14"), time1: "Corinthians", time2: "Atlético-MG", campeonato: "Campeonato Brasileiro", poster: "poster6.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-14"), time1: "São Paulo", time2: "Fortaleza", campeonato: "Campeonato Brasileiro", poster: "poster7.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-14"), time1: "Athletico-PR", time2: "Cuiabá", campeonato: "Campeonato Brasileiro", poster: "poster8.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-14"), time1: "Atlético-GO", time2: "Flamengo", campeonato: "Campeonato Brasileiro", poster: "poster9.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-14"), time1: "Criciúma", time2: "Juventude", campeonato: "Campeonato Brasileiro", poster: "poster10.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" }
     ];
 
     // Cria o container para as partidas
@@ -66,7 +66,7 @@ window.addEventListener("load", function() {
         imgElement.alt = 'Poster da Partida ' + (index + 1);
         partidaElement.appendChild(imgElement);
 
-        // Cria e adiciona os botões de compartilhamento do Twitter
+        // Cria e adiciona botões de compartilhamento
         var btnCompartilharTime1 = document.createElement('button');
         btnCompartilharTime1.textContent = 'Tweetar como ' + apelidos[partida.time1];
         partidaElement.appendChild(btnCompartilharTime1);
@@ -79,13 +79,23 @@ window.addEventListener("load", function() {
         btnCompartilharAssistido.textContent = 'Assisti à partida!';
         partidaElement.appendChild(btnCompartilharAssistido);
 
+        // Cria e adiciona botão para baixar a imagem
+        var btnBaixarImagem = document.createElement('button');
+        btnBaixarImagem.textContent = 'Baixar Imagem';
+        partidaElement.appendChild(btnBaixarImagem);
+
+        // Adiciona evento de clique para baixar a imagem
+        btnBaixarImagem.addEventListener("click", function() {
+            baixarImagem(partida.imagem_twitter);
+        });
+
         // Adiciona eventos de clique aos botões de compartilhamento
         btnCompartilharTime1.addEventListener("click", function() {
-            compartilharNoTwitter(partida.time1, partida.time2, partida.campeonato);
+            compartilharNoTwitter(apelidos[partida.time1], partida.time2, partida.campeonato);
         });
 
         btnCompartilharTime2.addEventListener("click", function() {
-            compartilharNoTwitter(partida.time2, partida.time1, partida.campeonato);
+            compartilharNoTwitter(apelidos[partida.time2], partida.time1, partida.campeonato);
         });
 
         btnCompartilharAssistido.addEventListener("click", function() {
@@ -95,8 +105,26 @@ window.addEventListener("load", function() {
 
     // Função para compartilhar no Twitter
     function compartilharNoTwitter(timeVencedor, timePerdedor, campeonato) {
-        var apelidoVencedor = apelidos[timeVencedor] || '';
-        var textoTweet = 'Acabei de assistir ao jogo entre ' + timeVencedor + ' x ' + timePerdedor + ' no ' + campeonato + '! Deu ' + apelidoVencedor + ' ⚽ @futeboltracker. Saiba mais em: https://l1nq.com/futeboltracker';
+        var textoTweet;
+        if (timeVencedor === '' && timePerdedor === '') {
+            textoTweet = 'Acabei de assistir a uma partida no ' + campeonato + ' ⚽ @futeboltracker. Saiba mais em: https://l1nq.com/futeboltracker';
+        } else {
+            textoTweet = 'Acabei de assistir ao jogo entre ' + timeVencedor + ' x ' + timePerdedor + ' no ' + campeonato + '! Deu ' + timeVencedor + ' ⚽ @futeboltracker. Saiba mais em: https://l1nq.com/futeboltracker';
+        }
         window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(textoTweet), "_blank");
+    }
+
+    // Função para baixar a imagem
+    function baixarImagem(url) {
+        // Cria um link temporário
+        var link = document.createElement('a');
+        link.href = url;
+        link.download = 'imagem_download.jpg';
+        // Adiciona o link ao documento
+        document.body.appendChild(link);
+        // Simula o clique no link
+        link.click();
+        // Remove o link do documento
+        document.body.removeChild(link);
     }
 });
