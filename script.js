@@ -26,16 +26,16 @@ window.addEventListener("load", function() {
 
     // Array de informações das partidas
     var partidas = [
-        { data: new Date("2024-05-14"), time1: "Internacional", time2: "Bahia", campeonato: "Campeonato Brasileiro", poster: "poster1.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
-        { data: new Date("2024-05-14"), time1: "Cruzeiro", time2: "Botafogo", campeonato: "Campeonato Brasileiro", poster: "poster2.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
-        { data: new Date("2024-05-14"), time1: "Vitória", time2: "Palmeiras", campeonato: "Campeonato Brasileiro", poster: "poster3.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
-        { data: new Date("2024-05-14"), time1: "Fluminense", time2: "Bragantino", campeonato: "Campeonato Brasileiro", poster: "poster4.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
-        { data: new Date("2024-05-14"), time1: "Vasco da Gama", time2: "Grêmio", campeonato: "Campeonato Brasileiro", poster: "poster5.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
-        { data: new Date("2024-05-14"), time1: "Corinthians", time2: "Atlético-MG", campeonato: "Campeonato Brasileiro", poster: "poster6.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
-        { data: new Date("2024-05-14"), time1: "São Paulo", time2: "Fortaleza", campeonato: "Campeonato Brasileiro", poster: "poster7.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
-        { data: new Date("2024-05-14"), time1: "Athletico-PR", time2: "Cuiabá", campeonato: "Campeonato Brasileiro", poster: "poster8.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
-        { data: new Date("2024-05-14"), time1: "Atlético-GO", time2: "Flamengo", campeonato: "Campeonato Brasileiro", poster: "poster9.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" },
-        { data: new Date("2024-05-14"), time1: "Criciúma", time2: "Juventude", campeonato: "Campeonato Brasileiro", poster: "poster10.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494" }
+        { data: new Date("2024-05-13"), time1: "Internacional", time2: "Bahia", campeonato: "Campeonato Brasileiro", poster: "poster1.jpg", imagem_twitter: "https://raw.githubusercontent.com/unkuninho/futeboltrackker/main/partida1.jpg", imagem_download: "https://raw.githubusercontent.com/unkuninho/futeboltrackker/main/partida1.jpg" },
+        { data: new Date("2024-05-14"), time1: "Cruzeiro", time2: "Botafogo", campeonato: "Campeonato Brasileiro", poster: "poster2.jpg", imagem_twitter: "https://github.com/unkuninho/futeboltrackker/blob/main/partida2.jpg?raw=true", imagem_download: "https://github.com/unkuninho/futeboltrackker/blob/main/partida2.jpg?raw=true" },
+        { data: new Date("2024-05-14"), time1: "Vitória", time2: "Palmeiras", campeonato: "Campeonato Brasileiro", poster: "poster3.jpg", imagem_twitter: "https://github.com/unkuninho/futeboltrackker/blob/main/partida3.jpg?raw=true", imagem_download: "https://github.com/unkuninho/futeboltrackker/blob/main/partida3.jpg?raw=true" },
+        { data: new Date("2024-05-13"), time1: "Fluminense", time2: "Bragantino", campeonato: "Campeonato Brasileiro", poster: "poster4.jpg", imagem_twitter: "https://github.com/unkuninho/futeboltrackker/blob/main/partida4.jpg?raw=true", imagem_download: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-14"), time1: "Vasco da Gama", time2: "Grêmio", campeonato: "Campeonato Brasileiro", poster: "poster5.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494", imagem_download: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-14"), time1: "Corinthians", time2: "Atlético-MG", campeonato: "Campeonato Brasileiro", poster: "poster6.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494", imagem_download: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-13"), time1: "São Paulo", time2: "Fortaleza", campeonato: "Campeonato Brasileiro", poster: "poster7.jpg", imagem_twitter: "https://raw.githubusercontent.com/unkuninho/futeboltrackker/main/partida7.jpg", imagem_download: "https://raw.githubusercontent.com/unkuninho/futeboltrackker/main/partida7.jpg" },
+        { data: new Date("2024-05-14"), time1: "Athletico-PR", time2: "Cuiabá", campeonato: "Campeonato Brasileiro", poster: "poster8.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494", imagem_download: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-14"), time1: "Atlético-GO", time2: "Flamengo", campeonato: "Campeonato Brasileiro", poster: "poster9.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494", imagem_download: "https://t2.tudocdn.net/618065?w=824&h=494" },
+        { data: new Date("2024-05-14"), time1: "Criciúma", time2: "Juventude", campeonato: "Campeonato Brasileiro", poster: "poster10.jpg", imagem_twitter: "https://t2.tudocdn.net/618065?w=824&h=494", imagem_download: "https://t2.tudocdn.net/618065?w=824&h=494" }
     ];
 
     // Cria o container para as partidas
@@ -86,7 +86,7 @@ window.addEventListener("load", function() {
 
         // Adiciona evento de clique para baixar a imagem
         btnBaixarImagem.addEventListener("click", function() {
-            baixarImagem(partida.imagem_twitter);
+            baixarImagem(partida.imagem_download);
         });
 
         // Adiciona eventos de clique aos botões de compartilhamento
