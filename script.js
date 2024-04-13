@@ -96,7 +96,7 @@ window.addEventListener("load", function() {
     // Função para compartilhar no Twitter
     function compartilharNoTwitter(timeVencedor, timePerdedor, campeonato) {
         var apelidoVencedor = apelidos[timeVencedor] || '';
-        var textoTweet = 'Acabei de assistir ao jogo entre ' + timeVencedor + ' x ' + timePerdedor + ' no ' + campeonato + '! Deu ' + apelidoVencedor + ' ⚽ @futeboltracker' + '#Futeboltracker';
+        var textoTweet = 'Acabei de assistir ao jogo entre ' + timeVencedor + ' x ' + timePerdedor + ' no ' + campeonato + '! Deu ' + apelidoVencedor + ' ⚽ @futeboltracker. Saiba mais em: https://l1nq.com/futeboltracker';
         window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(textoTweet), "_blank");
     }
 });
